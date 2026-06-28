@@ -22,9 +22,6 @@ A production-ready Deep Agent built with **FastAPI** and the **`deepagents`** pa
 14. [API Reference](#api-reference)
 15. [Session Management](#session-management)
 16. [Logs](#logs)
-17. [Troubleshooting](#troubleshooting)
-18. [Future Improvements](#future-improvements)
-
 ---
 
 ## What Makes This a Real Deep Agent
@@ -516,28 +513,3 @@ curl -X POST http://localhost:8000/upload/excel -F "file=@new_sales.xlsx"
 {"timestamp": "...", "level": "INFO", "message": "PDF tool called: query='keyboard strategy 2024'"}
 {"timestamp": "...", "level": "INFO", "message": "request_processed", "intent": "BOTH", "tools_selected": ["search_company_report", "analyse_company_sales"], "execution_time_ms": 3241.5}
 ```
-
----
-
-## Troubleshooting
-
-| Error | Fix |
-|-------|-----|
-| `ModuleNotFoundError: fitz` | `pip install PyMuPDF` |
-| `ModuleNotFoundError: deepagents` | `pip install deepagents==0.6.12` |
-| `PDF/Excel not found` | Run `uvicorn` from inside `deep_agent/`, not the parent folder |
-| `Could not import module "main"` | Use `uvicorn app.main:app --reload` not `uvicorn main:app` |
-| `404 model not found` | Confirm `MODEL_NAME=google_genai:gemini-flash-latest` in `.env` |
-| `429 quota exceeded` | Built-in retry handles it; wait ~60s between rapid bursts |
-| CORS error | Check server is running and host/port in UI match |
-
----
-
-## Future Improvements
-
-- Add a web search tool for real-time company news
-- Add a SQL tool for internal database queries
-- Stream token-by-token responses via Server-Sent Events
-- Redis-backed persistent session memory (survives server restarts)
-- Docker + docker-compose for one-command deployment
-- Unit tests with `pytest` + `httpx.AsyncClient`
