@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Rahul Technologies — Deep Agent</title>
+  <link rel="stylesheet" href="styles.css" />
+  <!-- Markdown & Syntax Highlighting -->
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github-dark.min.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+</head>
+<body class="dark">
+
+<!-- ── Sidebar ─────────────────────────────────────────────────────────── -->
+<aside class="sidebar" id="sidebar">
+  <div class="sidebar-header">
+    <span class="logo">🤖 Deep Agent</span>
+    <button class="icon-btn" id="newChatBtn" title="New Chat">＋</button>
+  </div>
+  <div class="sidebar-session-bar">
+    <span class="session-count">0 / 10</span>
+    <span style="font-size:0.72rem;color:var(--text2)">sessions</span>
+  </div>
+  <div class="history-list" id="historyList"></div>
+  <div class="sidebar-footer">
+    <span class="version">Rahul Technologies v1.0</span>
+  </div>
+</aside>
+
+<!-- ── Main ────────────────────────────────────────────────────────────── -->
+<main class="main">
+
+  <!-- Connection bar -->
+  <div class="conn-bar" id="connBar">
+    <span class="conn-label">🔌 Server</span>
+    <input id="hostInput" value="localhost" placeholder="Host" />
+    <span>:</span>
+    <input id="portInput" value="8000" placeholder="Port" type="number" />
+    <button class="btn-connect" id="connectBtn">Connect</button>
+    <span class="conn-status" id="connStatus">⚪ Disconnected</span>
+  </div>
+
+  <!-- Chat area -->
+  <div class="chat-area" id="chatArea"></div>
+
+  <!-- Thinking indicator -->
+  <div class="thinking hidden" id="thinkingIndicator">
+    <div class="thinking-dots"><span></span><span></span><span></span></div>
+    <span id="thinkingText">Thinking…</span>
+  </div>
+
+  <!-- Tool indicator -->
+  <div class="tool-badge hidden" id="toolBadge"></div>
+
+  <!-- Input bar -->
+  <div class="input-bar">
+    <button class="icon-btn" id="clearBtn" title="Clear chat">🗑️</button>
+    <textarea id="msgInput" rows="1" placeholder="Ask anything about Rahul Technologies…"></textarea>
+    <button class="icon-btn" id="sendBtn" title="Send">➤</button>
+    <button class="icon-btn" id="downloadBtn" title="Download chat">⬇️</button>
+  </div>
+
+</main>
+
+<script src="script.js"></script>
+</body>
+</html>

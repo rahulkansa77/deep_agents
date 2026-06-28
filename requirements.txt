@@ -1,0 +1,27 @@
+# ----------------------------
+# Python Version
+# ----------------------------
+# Recommended: Python 3.12.x
+# (Avoid Python 3.13 for now)
+
+# ----------------------------
+# FastAPI
+# ----------------------------
+fastapi==0.115.5
+uvicorn[standard]==0.32.1
+python-dotenv==1.0.1
+python-multipart==0.0.20
+pydantic-settings==2.6.1
+
+# ----------------------------
+# Deep Agents
+# ----------------------------
+deepagents==0.6.12
+langchain-google-genai==4.2.6
+
+# ----------------------------
+# Data Processing
+# ----------------------------
+pandas==2.2.3
+openpyxl==3.1.5
+PyMuPDF==1.25.1
